@@ -78,3 +78,10 @@ you can start [here](http://fxts.dev/docs/getting-started)
 ## License
 
 Apache License 2.0
+
+# Docker
+
+```
+docker run --cpus 2 --rm -v `PWD`:/app --name fxts -it fxts:0.1 bash
+npm test
+```
