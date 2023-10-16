@@ -1,5 +1,5 @@
+import { filter, join, map, pipe, toAsync } from "../src";
 import { asyncEmpty, empty } from "../src/_internal/utils";
-import { filter, join, map, pipe, toAsync } from "../src/index";
 
 describe("join", function () {
   describe("sync", function () {
@@ -10,6 +10,7 @@ describe("join", function () {
     });
 
     it("should be joined with separator", function () {
+      expect(join("_", [1])).toEqual("1");
       expect(join(", ", "hello")).toEqual("h, e, l, l, o");
     });
 

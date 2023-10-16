@@ -1,4 +1,6 @@
-type Nullable<T> = T extends null | undefined ? T : never;
+import isNull from "./isNull";
+import isUndefined from "./isUndefined";
+import type Include from "./types/Include";
 
 /**
  * Checks if the given value is `null` or `undefined`.
@@ -11,12 +13,7 @@ type Nullable<T> = T extends null | undefined ? T : never;
  * isNil(null); // true
  * ```
  */
-function isNil<T>(a: T): a is Nullable<T> {
-  if (a === undefined || a === null) {
-    return true;
-  }
-
-  return false;
-}
+const isNil = <T>(a: T): a is Include<T, null | undefined> =>
+  isUndefined(a) || isNull(a);
 
 export default isNil;

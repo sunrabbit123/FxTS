@@ -1,4 +1,4 @@
-import isEmpty from "../src/isEmpty";
+import { isEmpty } from "../src";
 
 describe("isEmpty", function () {
   const testParameters = [
@@ -15,6 +15,10 @@ describe("isEmpty", function () {
     [[1], false],
     ["", true],
     ["a", false],
+    [new Map(), true],
+    [new Map([["key", "value"]]), false],
+    [new Set(), true],
+    [new Set(["value"]), false],
     [Symbol(""), false],
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     [function () {}, false],
@@ -22,8 +26,6 @@ describe("isEmpty", function () {
 
   it.each(testParameters)(
     "should Return `true` if the given value is empty value(%s)",
-    function (input, expected) {
-      expect(isEmpty(input)).toEqual(expected);
-    },
+    (input, expected) => expect(isEmpty(input)).toEqual(expected),
   );
 });

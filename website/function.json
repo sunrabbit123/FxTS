@@ -22,6 +22,7 @@
     "keys",
     "map",
     "peek",
+    "pipeLazy",
     "pluck",
     "prepend",
     "range",
@@ -45,6 +46,7 @@
   ],
   "Strict": [
     "add",
+    "always",
     "apply",
     "average",
     "compactObject",
@@ -81,6 +83,7 @@
     "max",
     "memoize",
     "min",
+    "negate",
     "noop",
     "not",
     "nth",
@@ -90,6 +93,8 @@
     "pick",
     "pickBy",
     "pipe",
+    "prop",
+    "props",
     "reduce",
     "size",
     "some",
@@ -97,7 +102,10 @@
     "sortBy",
     "sum",
     "tap",
+    "throwError",
+    "throwIf",
     "toArray",
-    "unicodeToArray"
+    "unicodeToArray",
+    "unless"
   ]
 }
